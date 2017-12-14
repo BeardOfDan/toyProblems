@@ -4,10 +4,10 @@
 
 // The prompt: Make a message bus
 // Minimum Specification:
-//   Make a message buss object
+//   Make a message bus object
 //   Give it the methods 'subscribe' and 'publish'
 
-class MessageBuss {
+class MessageBus {
   constructor() {
     this._events = {};
   }
@@ -32,7 +32,11 @@ class MessageBuss {
   }
 }
 
-const mb = new MessageBuss();
+// ===========================
+// === Initial tests START ===
+// ===========================
+
+const mb = new MessageBus();
 mb.subscribe('test', (data) => {
   console.log(JSON.stringify(data));
 });
@@ -40,8 +44,17 @@ mb.subscribe('test', (data) => {
 mb.publish('test', 'asdf');
 
 mb.subscribe('other', (input) => {
-  console.log(input);
+  console.log(input * 5);
 });
 
 mb.publish('other', 5);
+
+
+// =========================
+// === Initial tests END ===
+// =========================
+
+
+
+
 
